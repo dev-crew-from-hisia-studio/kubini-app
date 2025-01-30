@@ -1,0 +1,92 @@
+:root{
+    font-size: 14px;
+}
+  
+*,::after,::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+::selection{
+    background: var(--primary);
+    color: var(--button_text_color);
+}
+html{
+    width: 100%;
+    height: 100%;
+}
+body{
+    color: var(--color);
+    background-color: var(--background);
+    font-family: var(--font_body);
+}
+
+.kui-app {
+    color: var(--color);
+    background-color: var(--background);
+    font-family: var(--font_body);
+    min-height: 100vh;
+    transition: all .25s;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+    font-family: var(--font_body);
+    &:hover{
+        text-decoration: none;
+    }
+}
+button{
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background: none;
+    text-align: left;
+    padding: 0;
+    color: inherit;
+    font: inherit;
+    font-family: var(--font_body);
+}
+i, strong, span{
+    color: inherit;
+}
+i{
+    font-family: "picha-icon";
+    font-style: normal;
+    font-size: 1.1em;
+    font-weight: normal;
+}
+ul{
+    list-style: none;
+    font-family: var(--font_body);
+}
+
+#fill_color{
+    fill: currentColor;
+}
+
+#stroke_color{
+    stroke: currentColor;
+}
+
+#primary{
+    fill: var(--primary);
+}
+
+.kui-offline-alert{
+    position: fixed;
+    width: 100%;
+    padding: .3em 1em;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color);
+    color: var(--background);
+    z-index: 999;
+    @extend %flex-center;
+    flex-direction: column;
+    row-gap: .1em;
+    font-size: .9em;
+    font-family: var(--font_body);
+}

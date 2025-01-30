@@ -1,0 +1,877 @@
+.kui-modal{
+    position: fixed;
+    width: 100%;
+    height: 100svh;
+    background: rgba($color: #000000, $alpha: .8);
+    top: 0;
+    left: 0;
+    z-index: 999;
+    padding: 1em;
+    display: none;
+    &.is--open{
+        display: flex;
+        justify-content: center;
+    }
+    &.as--top{
+        align-items: flex-start;
+    }
+    &.as--center{
+        align-items: center;
+    }
+    &.as--bottom{
+        align-items: flex-end;
+    }
+}
+.kui-popup{
+    position: fixed;
+    width: 100%;
+    height: 100svh;
+    background: rgba($color: #000000, $alpha: .5);
+    top: 0;
+    left: 0;
+    z-index: 999;
+    padding: 1em;
+    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.kui-modal-box{
+    position: relative;
+    width: 100%;
+    min-height: 15em;
+    background: var(--background);
+    border-radius: .8em;
+    &.is--sm{
+        max-width: 32em;
+    }
+    &.is--md{
+        max-width: 48em;
+    }
+    &.is--xl{
+        max-width: 80em;
+    }
+    &.is--full-page{
+        max-width: 100%;
+        height: 95%;
+        display: flex;
+        flex-direction: column;
+        .kui-modal-box__container{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__container{
+        position: relative;
+        width: 100%;
+        min-height: 15em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: .8em 1em;
+        form{
+            width: 100%;
+        }
+    }
+    &__content{
+        position: relative;
+        width: 100%;
+        // padding-top: 1em;
+        max-height: calc(70svh);
+        overflow-y: auto;
+    }
+    &__header{
+        position: relative;
+        width: 100%;
+        padding: .4em .5em;
+        border-bottom: .02em solid var(--color_rgba);
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: .8em;
+        h2{
+            font-family: var(--font_title);
+            font-size: 1.3em;
+        }
+    }
+    &__actions{
+        position: relative;
+        width: 100%;
+        padding-top: .8em;
+        border-top: .02em solid var(--color_rgba);
+        display: flex;
+        align-items: center;
+        gap: .8em;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
+}
+.kui-popup-box{
+    position: relative;
+    width: 100%;
+    max-width: 48em;
+    // max-height: 60svh;
+    background: var(--background);
+    border-radius: .8em;
+    transform: translateY(-15svh);
+    &__container{
+        position: relative;
+        width: 100%;
+        min-height: 15em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: .8em 1em;
+        form{
+            width: 100%;
+        }
+    }
+    &__header{
+        position: relative;
+        width: 100%;
+        padding: .4em .5em;
+        border-bottom: .02em solid var(--color_rgba);
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: .8em;
+        h2{
+            font-family: var(--font_title);
+            font-size: 1.3em;
+        }
+    }
+    &__actions{
+        position: relative;
+        width: 100%;
+        padding-top: .8em;
+        border-top: .02em solid var(--color_rgba);
+        display: flex;
+        align-items: center;
+        gap: .8em;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
+}
+.kui-popup-close_btn,
+.kui-modal-close_btn{
+    position: absolute;
+    top: .3em;
+    right: .3em;
+    width: 2.2em;
+    height: 2.2em;
+    background: var(--background_tint);
+    border-radius: .6em;
+    @extend %flex-center;
+    z-index: 2;
+}
+.kui-popup-box-action,
+.kui-modal-box-action{
+    position: relative;
+    padding: .6em 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: .5em;
+    font-size: .9em;
+    border-radius: .8em;
+    font-weight: 600;
+    transition: .3s ease;
+    background: var(--background_tint);
+    &:hover{
+        background: var(--color_rgba);
+    }
+
+    &.is--disable{
+    //   pointer-events: none;
+        background: var(--background_tint);
+        color: var(--color);
+        opacity: 0.7;
+        cursor: not-allowed;
+    }
+    &.is--primary{
+        color: var(--button_text_color);
+        background: var(--button);
+        
+    }
+    &.is--danger{
+        border: .02em solid $danger;
+        background: rgba($color: $danger, $alpha: 0.1);
+        &:hover{
+            background: rgba($color: $danger, $alpha: 0.2);
+            color: $danger;
+        }
+    }
+    &.is--success{
+        border: .02em solid $success;
+        background: rgba($color: $success, $alpha: 0.1);
+        &:hover{
+            background: rgba($color: $success, $alpha: 0.2);
+            color: $success;
+        }
+    }
+    &.is--warning{
+        border: .02em solid $warning;
+        background: rgba($color: $warning, $alpha: 0.1);
+        &:hover{
+            background: rgba($color: $warning, $alpha: 0.2);
+            color: $warning;
+        }
+    }
+}
+
+.kui-modal-field{
+    position: relative;
+    width: 100%;
+}
+.kui-modal-fields{
+    position: relative;
+    width: 100%;
+    padding: 1em;
+}
+.kui-modal-box-grid{
+    position: relative;
+    width: 100%;
+    padding: 1em;
+    display: flex;
+    gap: .8em;
+    &.is--wrap{
+        flex-wrap: wrap;
+    }
+}
+.kui-modal-box-grid-item{
+    position: relative;
+    width: 100%;
+    padding: 1em;
+    @extend %flex-center;
+    flex-direction: column;
+    row-gap: .8em;
+    border-radius: .8em;
+    min-height: 4em;
+    background: var(--background_tint);
+    border: .02em solid transparent;
+    text-align: center;
+    &.is--active{
+        border-color: var(--primary);
+        color: var(--primary);
+    }
+    &.is--three{
+        width: calc(100% / 3 - .8em);
+    }
+    &.is--min{
+        width: 3em;
+        height: 3em;
+        min-height: 3em;
+    }
+}
+.kui-modal-box-group{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: .8em;
+    border-top: .1em solid var(--color_rgba);
+    border-bottom: .1em solid var(--color_rgba);
+    padding: 1em;
+    h3{
+        font-family: var(--font_title);
+        font-size: 1.2em;
+    }
+    .kui-modal-box-grid{
+        padding: 1em 0;
+    }
+    &__header{
+        position: relative;
+        width: 100%;
+        display: flex;
+        gap: .5em;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+}
+
+.kui-modal-box-statut{
+    position: relative;
+    width: 100%;
+    @extend %flex-center;
+    padding: 2em 0;
+    text-align: center;
+    flex-direction: column;
+    row-gap: 1em;
+    &.is--danger{
+        i{
+            color: $danger;
+        }
+    }
+    &.is--success{
+        i{
+            color: $success;
+        }
+    }
+    &.is--warning{
+        i{
+            color: $warning;
+        }
+    }
+    &.is--info{
+        i{
+            color: $info;
+        }
+    }
+    &.is--primary{
+        i{
+            color: var(--primary);
+        }
+    }
+    i{
+        font-size: 2.5em;
+    }
+    h1{
+        font-family: var(--font_special);
+        font-size: 1.3em;
+        font-weight: 500;
+    }
+}
+.kui-modal-full-page{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: .8em;
+    // flex-wrap: wrap;
+    padding: 1.3em 0;
+    &__side{
+        position: relative;
+        width: 100%;
+        max-width: 23em;
+        height: 100%;
+        overflow-y: auto;
+        padding-right: 1.4em;
+        border-right: .02em solid var(--color_rgba);
+    }
+    &__container{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        display: flex;
+        gap: .8em;
+    }
+    &__section{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        padding-right: 1.4em;
+        border-right: .02em solid var(--color_rgba);
+    }
+}
+.kui-modal-full-page-illustration{
+    position: relative;
+    width: 100%;
+    display: flex;
+    margin-bottom: .4em;
+    &.is--left{
+        justify-content: flex-start;
+    }
+    &.is--center{
+        justify-content: center;
+    }
+    &.is--end{
+        justify-content: flex-end;
+    }
+    &__container{
+        position: relative;
+        width: 7em;
+        height: 7em;
+        overflow: hidden;
+        @extend %flex-center;
+        background: var(--background_tint);
+        i{
+            font-size: 2.5em;
+        }
+        img{
+            @extend %image-center;
+        }
+        &.is--rounded{
+            border-radius: 100%;
+        }
+        &.is--square{
+            border-radius: 1.8em;
+        }
+    }
+}
+
+.kui-modal-full-page-details{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: .5em;
+    margin-top: 1.8em;
+    h1{
+        font-family: var(--font_title);
+        font-size: 2em;
+    }
+}
+.kui-modal-full-page-details-category{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: .5em;
+    margin-bottom: .9em;
+    button{
+        display: flex;
+        align-items: center;
+        gap: .8em;
+        font-size: 1em;
+        span{
+            opacity: .8;
+        }
+    }
+}
+.kui-modal-full-page-details-grid{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: .8em;
+}
+
+.kui-modal-full-page-details-description{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: .5em;
+    strong{
+        font-family: var(--font_title);
+        font-size: 1.2em;
+        padding-bottom: .02em;
+        border-bottom: .02em solid var(--color_rgba);
+    }
+    p{
+        font-size: .9em;
+    }
+}
+.kui-modal-full-page-details-createdAt{
+    position: relative;
+    width: 100%;
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    row-gap: .02em;
+    p{
+        opacity: .8;
+        font-size: .8em;
+        strong{
+            font-family: var(--font_title);
+        }
+    }
+}
+
+.kui-modal-full-page-list{
+    position: relative;
+    width: 100%;
+    h2{
+        font-size: 1.3em;
+        font-family: var(--font_title);
+        padding-bottom: .3em;
+        display: block;
+        width: 100%;
+        border-bottom: .1em solid var(--color_rgba);
+        margin-bottom: 1em;
+    }
+}
+
+.kui-modal-full-page-list-item{
+    position: relative;
+    width: 100%;
+    padding: 1em;
+    border-radius: .8em;
+    background: var(--color_rgba);
+    transition: .3s ease;
+    &__action{
+        position: absolute;
+        right: 0.1em;
+        top: 0.1em;
+    }
+    .kui-tag{
+        background: var(--background);
+
+    }
+    &__container{
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: .8em;
+    }
+    &__illustration{
+        position: relative;
+        width: 3.2em;
+        min-width: 3.2em;
+        height: 3.2em;
+        background: var(--background);
+        border-radius: 1em;
+        overflow: hidden;
+        @extend %flex-center;
+        i{
+            font-size: 1.2em;
+        }
+        img{
+            @extend %image-center;
+        }
+    }
+    &__text{
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        div{
+            display: flex;
+        }
+    }
+
+}
+
+.kui-modal-empty{
+    position: relative;
+    width: 100%;
+    min-height: 70svh;
+    @extend %flex-center;
+    flex-direction: column;
+    row-gap: .1em;
+    text-align: center;
+}
+
+.kui-modal-show{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.2em;
+    padding: 1em 0;
+
+    &__illustration{
+        position: relative;
+        width: 6em;
+        height: 6em;
+        border-radius: .8em;
+        background: var(--background_tint);
+        overflow: hidden;
+        @extend %flex-center;
+        img{
+            @extend %image-center;
+        }
+        i{
+            font-size: 1.8em;
+        }
+    }
+    &__container{
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: .8em;
+        h1{
+            font-family: var(--font_title);
+            font-size: 2em;
+        }
+        span{
+            font-size: 1em;
+        }
+        strong{
+            font-size: 1em;
+        }
+    }
+    &__category{
+        position: relative;
+        width: 100%;
+        display: flex;
+        gap: .5em;
+        flex-wrap: wrap;
+    }
+    &__user{
+        position: relative;
+        width: 100%;
+        display: flex;
+        gap: .5em;
+        align-items: center;
+    }
+    &__client{
+        position: relative;
+        width: 100%;
+        display: flex;
+        gap: .3em;
+        flex-direction: column;
+        margin: 1em 0;
+        strong{
+            font-family: var(--font_title);
+            padding-bottom: .1em;
+            border-bottom: .1em solid var(--color_rgba1);
+        }
+    }
+    &__description{
+        position: relative;
+        width: 100%;
+        display: flex;
+        gap: .3em;
+        flex-direction: column;
+        strong{
+            font-family: var(--font_title);
+            padding-bottom: .1em;
+            border-bottom: .1em solid var(--color_rgba1);
+        }
+        span{
+            opacity: .8;
+            font-size: .7em;
+        }
+    }
+}
+
+.kui-modal-box-list{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: .8em;
+    &__container{
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: .6em;
+        // margin-bottom: .6em;
+    }
+}
+.kui-modal-box-list-action{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: .3em;
+    // padding: 0 .8em;
+    margin-bottom: 1em;
+}
+
+.kui-modal-box-list-action-search{
+    position: relative;
+    padding: .6em .7em;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .5em;
+    font-size: .98em;
+    border-radius: .6em;
+    font-weight: 600;
+    transition: .3s ease;
+    background: var(--background_tint);
+    // justify-content: space-between;
+   
+    input, select{
+        position: relative;
+        width: 18em;
+        background: transparent;
+        outline: none;
+        color: inherit;
+        border: none;
+        min-height: 1.4em;
+    }
+}
+
+.kui-modal-box-list-action-types{
+    position: relative;
+    width: 100%;
+    display: flex;
+    gap: .8em;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin-top: .5em;
+    strong{
+        font-size: 1em;
+        font-family: var(--font_title);
+        white-space: nowrap;
+    }
+    &__container{
+        position: relative;
+        width: 100%;
+        padding-bottom: .6em;
+        overflow-x: auto;
+        display: flex;
+        align-items: center;
+        gap: .4em;
+    }
+}
+.kui-modal-box-list-action-type{
+    position: relative;
+    padding: .4em .6em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: .5em;
+    font-size: .98em;
+    border-radius: 1.8em;
+    font-weight: 600;
+    background: var(--background_tint);
+    border: .1em solid var(--color_rgba);
+    &.active{
+        background: var(--primary_rgba);
+        border-color: var(--primary);
+    }
+    white-space: nowrap;
+    span{
+        white-space: nowrap;
+    }
+}
+
+.kui-modal-box-list-item{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: .8em 1em;
+    background: var(--background_tint);
+    gap: .8em;
+    border-radius: .8em;
+    border: .02em solid transparent;
+    transition: all .3s ease;
+    &.active{
+        background: var(--primary_rgba);
+        border-color: var(--primary);
+    }
+    &__check{
+        position: relative;
+        width: 1.3em;
+        height: 1.3em;
+        border-radius: .3em;
+        @extend %flex-center;
+        border: .02em solid var(--primary);
+        background: var(--primary_rgba);
+    }
+    &__avatar{
+        position: relative;
+        width: 3em;
+        height: 3em;
+        min-width: 3em;
+        border-radius: .8em;
+        position: relative;
+        overflow: hidden;
+        background: var(--background);
+        &.is--rounded{
+            border-radius: 50%
+        }
+        img{
+            @extend %image-center;
+        }
+        @extend %flex-center;
+    }
+    &__container{
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: .2em;
+        strong{
+            font-size: 1.1em;
+            font-family: var(--font_title);
+        }
+        span{
+            opacity: .8;
+            font-size: .9em;
+        }
+    }
+}
+
+
+.kui-modal-box-roles{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin-top: 2em;
+    row-gap: 2em;
+    padding: 1em;
+}
+.kui-modal-box-role{
+    position: relative;
+    width: calc((100% - 1em) / 2 );
+    min-width: 28em;
+    display: flex;
+    flex-direction: column;
+    row-gap: .8em;
+
+    strong{
+        font-size: 1.3em;
+        display: block;
+        width: 100%;
+        padding-bottom: .5em;
+        border-bottom: .1em solid var(--color_rgba1);
+        font-family: var(--font_title);
+    }
+    &__container{
+        position: relative;
+        width: 100%;
+        display: flex;
+        gap: .8em;
+        flex-wrap: wrap;
+        
+    }
+}
+.kui-modal-box-role-pivilege{
+    position: relative;
+    display: flex;
+    gap: .4em;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: .3em;
+}
+.kui-modal-box__item{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1em;
+}
+.kui-modal-scene{
+    position: relative;
+    width: 100%;
+    padding: 2em 1em;
+    overflow: hidden;
+}
+.kui-modal-scene-list{
+    position: relative;
+    width: 100%;
+    max-height: 40svh;
+    overflow-y: auto;
+}
+.kui-modal-scene-details{
+    position: relative;
+    width: 100%;
+    &__container{
+        position: relative;
+        width: 100%;
+        strong{
+            font-size: 1.6em;
+            font-family: var(--font_title);
+        }
+    }
+    &__item{
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: .8em;
+        strong{
+            font-size: 1em;
+            font-family: var(--font_title);
+            text-transform: uppercase;
+        }
+    }
+}

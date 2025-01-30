@@ -1,0 +1,273 @@
+$default_primary: #1adf00; 
+$default_primary_dark: darken($default_primary, 20%);
+$default_secondary: #d4ffce;
+
+$palette2_primary: #1946fa;
+$palette2_primary_dark: darken($palette2_primary, 20%);
+$palette2_secondary: #d8e0ff;
+
+
+$palette3_l_primary: #0f1014;
+$palette3_l_primary_dark: darken($palette3_l_primary, 20%);
+$palette3_l_secondary: #59595b;
+
+$palette3_d_primary: #e5e5e5;
+$palette3_d_primary_dark: darken($palette3_d_primary, 20%);
+$palette3_d_secondary: #bfbfbf;
+
+$palette4_primary: #ff5900;
+$palette4_primary_dark: darken($palette4_primary, 20%);
+$palette4_secondary: #ffe3c6;
+
+$palette5_primary: #0F4C75;
+$palette5_primary_dark: darken($palette5_primary, 20%);
+$palette5_secondary: #2dabfe;
+
+$palette6_primary: #8105D8;
+$palette6_primary_dark: darken($palette6_primary, 20%);
+$palette6_secondary: #d9a4ff;
+
+$palette7_primary: #e60173;
+$palette7_primary_dark: darken($palette7_primary, 20%);
+$palette7_secondary: #e8d1dd;
+
+$background_light: #fff;
+$background_dark: #121212;
+
+$background_tint_light: #f8f7f7;
+$background_tint_dark: #2A2A2A;
+
+$color_dark: #fff;
+$color_light: #140d35;
+
+$color_tint_dark: #e6e6e6;
+$color_tint_light: #3d3964;
+
+$success: #18df7f;
+$danger: #c90d23;
+$warning: #fff30c;
+$info: #2a67ff;
+
+
+$default_primary_rgba: rgba($color: $default_primary, $alpha: 0.1);
+$default_primary_rgba2: rgba($color: $default_primary, $alpha: 0.3);
+$default_secondary_rgba: rgba($color: $default_secondary, $alpha: 0.1);
+$default_secondary_rgba2: rgba($color: $default_secondary, $alpha: 0.3);
+
+$palette2_primary_rgba: rgba($color: $palette2_primary, $alpha: 0.1);
+$palette2_primary_rgba2: rgba($color: $palette2_primary, $alpha: 0.3);
+$palette2_secondary_rgba: rgba($color: $palette2_secondary, $alpha: 0.1);
+$palette2_secondary_rgba2: rgba($color: $palette2_secondary, $alpha: 0.3);
+
+$palette3_l_primary_rgba: rgba($color: $palette3_l_primary, $alpha: 0.1);
+$palette3_l_primary_rgba2: rgba($color: $palette3_l_primary, $alpha: 0.3);
+$palette3_l_secondary_rgba: rgba($color: $palette3_l_secondary, $alpha: 0.1);
+$palette3_l_secondary_rgba2: rgba($color: $palette3_l_secondary, $alpha: 0.3);
+
+$palette3_d_primary_rgba: rgba($color: $palette3_d_primary, $alpha: 0.1);
+$palette3_d_primary_rgba2: rgba($color: $palette3_d_primary, $alpha: 0.3);
+$palette3_d_secondary_rgba: rgba($color: $palette3_d_secondary, $alpha: 0.1);
+$palette3_d_secondary_rgba2: rgba($color: $palette3_d_secondary, $alpha: 0.3);
+
+$palette4_primary_rgba: rgba($color: $palette4_primary, $alpha: 0.1);
+$palette4_primary_rgba2: rgba($color: $palette4_primary, $alpha: 0.3);
+$palette4_secondary_rgba: rgba($color: $palette4_secondary, $alpha: 0.1);
+$palette4_secondary_rgba2: rgba($color: $palette4_secondary, $alpha: 0.3);
+
+$palette5_primary_rgba: rgba($color: $palette5_primary, $alpha: 0.1);
+$palette5_primary_rgba2: rgba($color: $palette5_primary, $alpha: 0.3);
+$palette5_secondary_rgba: rgba($color: $palette5_secondary, $alpha: 0.1);
+$palette5_secondary_rgba2: rgba($color: $palette5_secondary, $alpha: 0.3);
+
+$palette6_primary_rgba: rgba($color: $palette6_primary, $alpha: 0.1);
+$palette6_primary_rgba2: rgba($color: $palette6_primary, $alpha: 0.3);
+$palette6_secondary_rgba: rgba($color: $palette6_secondary, $alpha: 0.1);
+$palette6_secondary_rgba2: rgba($color: $palette6_secondary, $alpha: 0.3);
+
+$palette7_primary_rgba: rgba($color: $palette7_primary, $alpha: 0.1);
+$palette7_primary_rgba2: rgba($color: $palette7_primary, $alpha: 0.3);
+$palette7_secondary_rgba: rgba($color: $palette7_secondary, $alpha: 0.1);
+$palette7_secondary_rgba2: rgba($color: $palette7_secondary, $alpha: 0.3);
+
+
+$background_rgba_light: rgba($color: $background_tint_light, $alpha: 0.1);
+$background_rgba_light1: rgba($color: $background_tint_light, $alpha: 0.3);
+$background_rgba_light2: rgba($color: $background_tint_light, $alpha: 0.6);
+$background_rgba_dark: rgba($color: $background_tint_dark, $alpha: 0.1);
+$background_rgba_dark1: rgba($color: $background_tint_dark, $alpha: 0.3);
+$background_rgba_dark2: rgba($color: $background_tint_dark, $alpha: 0.6);
+
+$color_rgba_light: rgba($color: $color_light, $alpha: 0.05);
+$color_rgba_light1: rgba($color: $color_light, $alpha: 0.3);
+$color_rgba_light2: rgba($color: $color_light, $alpha: 0.6);
+
+$color_rgba_dark: rgba($color: $color_dark, $alpha: 0.1);
+$color_rgba_dark1: rgba($color: $color_dark, $alpha: 0.3);
+$color_rgba_dark2: rgba($color: $color_dark, $alpha: 0.6);
+
+:root {
+    --background: #{$background_light};
+    --background_tint: #{$background_tint_light};
+    --color: #{$color_light};
+    --color_tint: #{$color_tint_light};
+
+    --color_rgba: #{$color_rgba_light};
+    --color_rgba1: #{$color_rgba_light1};
+    --color_rgba2: #{$color_rgba_light2};
+
+    --background_rgba: #{$background_rgba_light};
+    --background_rgba1: #{$background_rgba_light1};
+    --background_rgba2: #{$background_rgba_light2};
+  }
+  
+  [data-theme='dark'] {
+
+    --background: #{$background_dark};
+    --background_tint: #{$background_tint_dark};
+    --color: #{$color_dark};
+    --color_tint: #{$color_tint_dark};
+  
+    --color_rgba: #{$color_rgba_dark};
+    --color_rgba1: #{$color_rgba_dark1};
+    --color_rgba2: #{$color_rgba_dark2};
+
+    --background_rgba: #{$background_rgba_dark};
+    --background_rgba1: #{$background_rgba_dark1};
+    --background_rgba2: #{$background_rgba_dark2};
+}
+
+[data-palette='default'] {
+    --primary: #{$default_primary};
+    --primary_rgba: #{$default_primary_rgba};
+    --primary_rgba1: #{$default_primary_rgba2};
+
+    --secondary: #{$default_secondary};
+    --secondary_rgba: #{$default_secondary_rgba};
+    --secondary_rgba1: #{$default_secondary_rgba2};
+
+    --button: #{$default_primary};
+    --button_darken: #{$default_primary_dark};
+    --button_text_color: #{$color_light};
+
+    --button_secondary: #{$default_secondary};
+    --button_secondary_text_color: #{$color_light};
+}
+
+[data-palette='palette-2'] {
+    --primary: #{$palette2_primary};
+    --primary_rgba: #{$palette2_primary_rgba};
+    --primary_rgba1: #{$palette2_primary_rgba2};
+
+    --secondary: #{$palette2_secondary};
+    --secondary_rgba: #{$palette2_secondary_rgba};
+    --secondary_rgba1: #{$palette2_secondary_rgba2};
+
+    --button: #{$palette2_primary};
+    --button_darken: #{$palette2_primary_dark};
+    --button_text_color: #{$color_dark};
+
+    --button_secondary: #{$palette2_secondary_rgba};
+    --button_secondary_text_color: #{$palette2_secondary};
+}
+
+[data-palette='palette-3'] {
+    --primary: #{$palette3_l_primary};
+    --primary_rgba: #{$palette3_l_primary_rgba};
+    --primary_rgba1: #{$palette3_l_primary_rgba2};
+
+    --secondary: #{$palette3_l_secondary};
+    --secondary_rgba: #{$palette3_l_secondary_rgba};
+    --secondary_rgba1: #{$palette3_l_secondary_rgba2};
+
+    --button: #{$palette3_l_primary};
+    --button_darken: #{$palette3_l_primary_dark};
+    --button_text_color: #{$color_dark};
+
+    --button_secondary: #{$palette3_l_secondary_rgba};
+    --button_secondary_text_color: #{$palette3_l_secondary};
+}
+[data-theme='dark'][data-palette='palette-3'] {
+    --primary: #{$palette3_d_primary};
+    --primary_rgba: #{$palette3_d_primary_rgba};
+    --primary_rgba1: #{$palette3_d_primary_rgba2};
+
+    --secondary: #{$palette3_d_secondary};
+    --secondary_rgba: #{$palette3_d_secondary_rgba};
+    --secondary_rgba1: #{$palette3_d_secondary_rgba2};
+
+    --button: #{$palette3_d_primary};
+    --button_darken: #{$palette3_d_primary_dark};
+    --button_text_color: #{$color_light};
+
+    --button_secondary: #{$palette3_d_secondary_rgba};
+    --button_secondary_text_color: #{$palette3_d_secondary};
+}
+
+[data-palette='palette-4'] {
+    --primary: #{$palette4_primary};
+    --primary_rgba: #{$palette4_primary_rgba};
+    --primary_rgba1: #{$palette4_primary_rgba2};
+
+    --secondary: #{$palette4_secondary};
+    --secondary_rgba: #{$palette4_secondary_rgba};
+    --secondary_rgba1: #{$palette4_secondary_rgba2};
+
+    --button: #{$palette4_primary};
+    --button_darken: #{$palette4_primary_dark};
+    --button_text_color: #{$color_dark};
+
+    --button_secondary: #{$palette4_secondary_rgba};
+    --button_secondary_text_color: #{$palette4_secondary};
+}
+
+[data-palette='palette-5'] {
+    --primary: #{$palette5_primary};
+    --primary_rgba: #{$palette5_primary_rgba};
+    --primary_rgba1: #{$palette5_primary_rgba2};
+
+    --secondary: #{$palette5_secondary};
+    --secondary_rgba: #{$palette5_secondary_rgba};
+    --secondary_rgba1: #{$palette5_secondary_rgba2};
+
+    --button: #{$palette5_primary};
+    --button_darken: #{$palette5_primary_dark};
+    --button_text_color: #{$color_dark};
+
+    --button_secondary: #{$palette5_secondary_rgba};
+    --button_secondary_text_color: #{$palette5_secondary};
+}
+
+[data-palette='palette-6'] {
+    --primary: #{$palette6_primary};
+    --primary_rgba: #{$palette6_primary_rgba};
+    --primary_rgba1: #{$palette6_primary_rgba2};
+
+    --secondary: #{$palette6_secondary};
+    --secondary_rgba: #{$palette6_secondary_rgba};
+    --secondary_rgba1: #{$palette6_secondary_rgba2};
+
+    --button: #{$palette6_primary};
+    --button_darken: #{$palette6_primary_dark};
+    --button_text_color: #{$color_dark};
+
+    --button_secondary: #{$palette6_secondary_rgba};
+    --button_secondary_text_color: #{$palette6_secondary};
+}
+
+
+[data-palette='palette-7'] {
+    --primary: #{$palette7_primary};
+    --primary_rgba: #{$palette7_primary_rgba};
+    --primary_rgba1: #{$palette7_primary_rgba2};
+
+    --secondary: #{$palette7_secondary};
+    --secondary_rgba: #{$palette7_secondary_rgba};
+    --secondary_rgba1: #{$palette7_secondary_rgba2};
+
+    --button: #{$palette7_primary};
+    --button_darken: #{$palette7_primary_dark};
+    --button_text_color: #{$color_dark};
+
+    --button_secondary: #{$palette7_secondary_rgba};
+    --button_secondary_text_color: #{$palette7_secondary};
+}

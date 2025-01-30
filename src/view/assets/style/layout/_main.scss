@@ -1,0 +1,537 @@
+.kui-menu{
+    font-family: var(--font_body);
+    position: fixed;
+    width: 18em;
+    height: 100svh;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    background: var(--background_tint);
+    padding: 3em 1.5em;
+    padding-bottom: 1.5em;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5em;
+    overflow-y: auto;
+    overflow-x: visible;
+    &__header{
+        position: relative;
+        width: 100%;
+        @extend %flex-center;
+        svg{
+            height: 4em;
+            width: auto;
+            opacity: .6;
+            transition: .3s ease;
+        }
+        &:hover{
+            svg{
+                opacity: 1;
+                #fill_color{
+                    fill: var(--primary);
+                }
+                #stroke_color{
+                    stroke: var(--primary);
+                }
+            }
+        }
+    }
+    &.is--min{
+        width: 5em;
+        // overflow: hidden;
+        padding: 3em .5em;
+        padding-bottom: .5em;
+        svg{
+            width: 3em;
+            height: auto;
+        }
+        
+        .kui-menu-navigation-group{
+            strong{
+                display: none;
+            }
+        }
+        .kui-menu-navigation-item{
+            a,button{
+                min-height: 2.8em;
+                @extend %flex-center;
+                span{
+                    position: fixed;
+                    left: 6em;
+                    padding: .2em .5em;
+                    font-size: .8em;
+                    font-weight: 500;
+                    background: var(--color);
+                    color: var(--background);
+                    border-radius: .3em;
+                    display: none;
+                    white-space: nowrap;
+                }
+                &:hover{
+                    span{
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+.kui-menu-navigation{
+    font-family: var(--font_body);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    row-gap: .5em;
+    flex-direction: column;
+    &__container{
+        position: relative;
+        width: 100%;
+        // min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: .6em;
+        padding: .8em 0;
+        border-top: .02em solid var(--color_rgba);
+        border-bottom: .02em solid var(--color_rgba);
+        margin-top: .4em;
+    }
+}
+.kui-menu-navigation-group{
+    font-family: var(--font_body);
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: .5em;
+    padding-bottom: .4em;
+    &:not(:last-child){
+        border-bottom: .02em solid var(--color_rgba);
+    }
+    strong{
+        font-size: 1em;
+        opacity: .9;
+        // text-transform: uppercase;
+        font-family: var(--font_title);
+        font-weight: bold;
+        opacity: .6;
+    }
+
+}
+.kui-menu-navigation-item{
+    position: relative;
+    width: 100%;
+    a, button{
+        position: relative;
+        width: 100%;
+        padding: .6em .8em;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: .5em;
+        font-size: .98em;
+        border-radius: .8em;
+        transition: .3s ease;
+        span{
+            font-weight: 500;
+        }
+        &:hover{
+            background: var(--background);
+        }
+        &.active{
+            background: var(--primary_rgba);
+            overflow: hidden;
+            &::after{
+                @include pseudo-el;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: calc(100% - .3em);
+                height: .2em;
+                background: var(--primary);
+            }
+        }
+        i{
+            font-size: 1.1em;
+        }
+
+    }
+}
+
+.kui-main{
+    
+    position: relative;
+    width: calc(100% - 18em);
+    margin-left: auto;
+    min-height: 97svh;
+    padding: 1em;
+    padding-top: 3em;
+    &.is--min{
+        width: calc(100% - 5em);
+    }
+}
+.kui-footer{
+    position: relative;
+    width: calc(100% - 20em);
+    margin-left: auto;
+    padding: 0.5em 1em;
+    &.is--min{
+        width: calc(100% - 5em);
+    }
+    font-size: .9em;
+    opacity: .5;
+}
+.kui-account{
+    position: fixed;
+    right: 1em;
+    top: 1em;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    gap: .8em;
+}
+.kui-account-onlines{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: .4em;
+    &__list{
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+}
+.kui-account-actions{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: .4em;
+}
+
+.kui-account-online{
+    position: relative;
+    &:not(:last-child){
+        margin-right: -1.2em;
+    }
+    &__avatar{
+        position: relative;
+        width: 3.2em;
+        height: 3.2em;
+        border-radius: 50%;
+        border: .3em solid var(--background);
+        overflow: hidden;
+        background: var(--background_tint);
+        @extend %flex-center;
+        
+        font-family: var(--font_special);
+        span{
+            opacity: .8;
+            font-size: 1em;
+
+        }
+        img{
+            @extend %image-center;
+        }
+    }
+    span.tooltip{
+        position: absolute;
+        left: 50%;
+        bottom: -30%;
+        transform: translateX(-50%);
+        padding: .2em .5em;
+        font-size: .8em;
+        font-weight: 500;
+        background: var(--color);
+        color: var(--background);
+        border-radius: .3em;
+        display: none;
+        white-space: nowrap;
+        z-index: 5;
+    }
+    &:hover{
+        span{
+            display: block;
+        }
+    }
+    .notice{
+        position: absolute;
+        bottom: 0.28em;
+        left: 0.28em;
+        width: 0.6em;
+        height: 0.6em;
+        border-radius: 50%;
+        background: $success;
+        z-index: 3;
+        border: .1em solid var(--background);
+    }
+}
+
+.kui-account-me{
+    position: relative;
+    button{
+        position: relative;
+        .kui-account-me__avatar{
+            position: relative;
+            width: 3.2em;
+            height: 3.2em;
+            border-radius: 50%;
+            border: .3em solid var(--background);
+            overflow: hidden;
+            background: var(--background_tint);
+            @extend %flex-center;
+            
+            font-family: var(--font_special);
+            span{
+                opacity: .8;
+                font-size: 1em;
+    
+            }
+            img{
+                @extend %image-center;
+            }
+        }
+        span.tooltip{
+            position: absolute;
+            left: 50%;
+            bottom: -30%;
+            transform: translateX(-50%);
+            padding: .2em .5em;
+            font-size: .8em;
+            font-weight: 500;
+            background: var(--color);
+            color: var(--background);
+            border-radius: .3em;
+            display: none;
+            white-space: nowrap;
+            z-index: 5;
+        }
+        &:hover{
+            span{
+                display: block;
+            }
+        }
+        
+    }
+}
+
+.kui-account-action{
+    position: relative;
+    button{
+        position: relative;
+        width: 2.8em;
+        height: 2.8em;
+        border-radius: .8em;
+        // overflow: hidden;
+        background: var(--background_tint);
+        @extend %flex-center;
+        span{
+            position: absolute;
+            left: 50%;
+            bottom: -40%;
+            transform: translateX(-50%);
+            padding: .2em .5em;
+            font-size: .8em;
+            font-weight: 500;
+            background: var(--color);
+            color: var(--background);
+            border-radius: .3em;
+            display: none;
+            white-space: nowrap;
+            z-index: 5;
+        }
+        &:hover{
+            background: var(--color_rgba);
+            span{
+                display: block;
+            }
+        }
+        &.active{
+            background: var(--primary_rgba);
+        }
+
+
+        .notice{
+            position: absolute;
+            top: -0.08em;
+            left: -0.08em;
+            width: 0.8em;
+            height: 0.8em;
+            border-radius: 50%;
+            background: $danger;
+            z-index: 3;
+            border: .1em solid var(--background);
+        }
+    }
+}
+
+.kui-submenu{
+    position: relative;
+    width: 16em;
+    min-height: 16em;
+    height: 87.6svh;
+    background: var(--background_tint);
+    border-radius: .8em;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+    padding: 1em;
+    overflow-y: hidden;
+    h1{
+        font-family: var(--font_title);
+        font-size: 1.4em;
+    }
+    &__container{
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: .4em;
+    }
+    &__item{
+        position: relative;
+        width: 100%;
+        a, button{
+            position: relative;
+            width: 100%;
+            padding: .6em .8em;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: .5em;
+            font-size: .98em;
+            border-radius: .8em;
+            font-weight: 500;
+            transition: .3s ease;
+            &:hover{
+                background: var(--background);
+            }
+            &.active{
+                background: var(--primary_rgba);
+                overflow: hidden;
+                &::after{
+                    @include pseudo-el;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: calc(100% - .3em);
+                    height: .2em;
+                    background: var(--primary);
+                }
+            }
+            i{
+                font-size: 1.1em;
+            }
+    
+        }
+    }
+}
+
+.kump-layout-header{
+    position: fixed;
+    right: 1em;
+    top: 1em;
+    z-index: 999;
+    display: flex;
+    gap: .5em;
+    align-items: center;
+}
+.kump-layout-header-apps{
+    position: fixed;
+    top: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    padding: .8em;
+    display: flex;
+    gap: .5em;
+    background: var(--background_rgba1);
+    backdrop-filter: blur(10px);
+    border-radius: .8em;
+}
+
+.kump-layout-header-app{
+    position: relative;
+    width: 2.7em;
+    height: 2.7em;
+    @extend %flex-center;
+    border-radius: .8em;
+    
+    &:hover{
+        background: var(--background_tint);
+        color: var(--color);
+        span{
+            display: block;
+        }
+    }
+    &.is--active{
+        background: var(--primary);
+        color: var(--button_text_color);
+        &:hover{
+            background: var(--secondary);
+            color: var(--button_secondary_text_color);
+        }
+    }
+    i{
+        font-size: 1.4em;
+    }
+    span{
+        position: absolute;
+        top: 0;
+        padding: .2em;
+        background: var(--color);
+        color: var(--background);
+        border-radius: .4em;
+        transform: translateY(2.8em);
+        display: none;
+        font-size: .8em;
+        z-index: 2;
+    }
+    .notice{
+        position: absolute;
+        width: 0.5em;
+        height: 0.5em;
+        border-radius: 50%;
+        background: $danger;
+        top: .82em;
+        right: .82em;
+    }
+}
+
+.kump-layout-main{
+    position: relative;
+    width: 100%;
+    min-height: 96.5svh;
+    padding-top: 5em;
+}
+
+.kump-layout-header-logo{
+    position: fixed;
+    z-index: 9;
+    top: 2em;
+    left: 1em;
+    svg{
+        width: auto;
+        height: 2.5em;
+        opacity: .5;
+    }
+    &:hover{
+        svg{
+            opacity: 1;
+            #fill_color{
+                fill: var(--primary);
+            }
+            #stroke_color{
+                stroke: var(--primary);
+            }
+        }
+    }
+}
+.kump-layout-footer{
+    position: relative;
+    width: 100%;
+    padding: .5em;
+    text-align: center;
+    opacity: .8;
+}

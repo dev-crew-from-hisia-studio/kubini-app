@@ -1,0 +1,41 @@
+.kui-grid{
+    position: relative;
+    width: 100%;
+    display: flex;
+    &.fd-row{
+        flex-direction: row;
+    }
+    &.fd-row-reverse{
+        flex-direction: row-reverse;
+    }
+    &.fd-column{
+        flex-direction: column;
+    }
+    &.fd-column-reverse{
+        flex-direction: column-reverse;
+    }
+    &.al-start{
+        align-items: flex-start;
+    }
+    &.al-center{
+        align-items: center;
+    }
+    &.al-end{
+        align-items: flex-end;
+    }
+    &.jc-between{
+        justify-content: space-between;
+    }
+    &.jc-center{
+        justify-content: center;
+    }
+    &.jc-around{
+        justify-content: space-around;
+    }
+    &.jc-end{
+        justify-content: flex-end;
+    }
+    &.jc-start{
+        justify-content: flex-start;
+    }
+}

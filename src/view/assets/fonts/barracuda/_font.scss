@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'Barracuda';
+    src: url('Barracuda-LightItalic.eot');
+    src: url('Barracuda-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('Barracuda-LightItalic.woff2') format('woff2'),
+        url('Barracuda-LightItalic.woff') format('woff'),
+        url('Barracuda-LightItalic.ttf') format('truetype'),
+        url('Barracuda-LightItalic.svg#Barracuda-LightItalic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Barracuda';
+    src: url('Barracuda-Regular.eot');
+    src: url('Barracuda-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Barracuda-Regular.woff2') format('woff2'),
+        url('Barracuda-Regular.woff') format('woff'),
+        url('Barracuda-Regular.ttf') format('truetype'),
+        url('Barracuda-Regular.svg#Barracuda-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Barracuda';
+    src: url('Barracuda-BoldItalic.eot');
+    src: url('Barracuda-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Barracuda-BoldItalic.woff2') format('woff2'),
+        url('Barracuda-BoldItalic.woff') format('woff'),
+        url('Barracuda-BoldItalic.ttf') format('truetype'),
+        url('Barracuda-BoldItalic.svg#Barracuda-BoldItalic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}

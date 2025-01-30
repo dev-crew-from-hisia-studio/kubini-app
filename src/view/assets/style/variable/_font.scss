@@ -1,0 +1,9 @@
+$barracuda: "Barracuda", sans-serif;
+$lufga: "Lufga", sans-serif;
+$roboto_slab: "Roboto Slab", sans-serif;
+
+:root {
+    --font_body: #{$lufga};
+    --font_title: #{$barracuda};
+    --font_special: #{$roboto_slab};
+}

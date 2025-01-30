@@ -1,24 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext, useEffect, useState } from 'react';
+import useInternetConnection from './hook/useInternetConnection';
+import { ThemeContext } from './context/ThemeContext';
+import { WebRouter } from './view/routes';
 
 function App() {
+  const {
+    theme,
+    colorPalette,
+    defaultDark,
+    defaultTheme,
+  } = useContext(ThemeContext);
+
+  const [isConnected, setIsConnected] = useState<boolean>(true)
+
+  const isOnlineConnected = useInternetConnection();
+  
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setIsConnected(window.navigator.onLine);
+    }, 2000); 
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div 
+      className="kui-app"
+      data-theme={defaultTheme === "default" ? (defaultDark ? "dark" : "light") : theme}
+      data-palette={colorPalette}
+    >
+      <WebRouter/>
+      {
+        !isConnected ? (
+          <div className={`kui-offline-alert`}>
+            <strong>Vous n'êtes pas connecté à internet!!</strong>
+            <p>Veuillez verifier l'etat de votre connexion à internet et <button type='button' onClick={() => window.location.reload()} style={{textDecoration: "underline"}}>réactualiser...</button></p>
+          </div>
+        ) : (
+          !isOnlineConnected ? (
+            <div className={`kui-offline-alert`}>
+              <strong>Vous n'êtes pas connecté à internet!!</strong>
+              <p>Veuillez verifier l'etat de votre connexion à internet et <button type='button' onClick={() => window.location.reload()} style={{textDecoration: "underline"}}>réactualiser...</button></p>
+            </div>
+          ) : null
+        )
+      }
     </div>
   );
 }

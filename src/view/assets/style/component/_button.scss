@@ -1,0 +1,329 @@
+.kui-page-link-item{
+    position: relative;
+    padding: .6em .8em;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .5em;
+    font-size: .98em;
+    border-radius: .8em;
+    width: 100%;
+    background: var(--background_tint);
+    border: .1em solid var(--color_rgba);
+    span{
+        font-weight: 600;
+    }
+    svg{
+        width: 1.2em;
+        height: 1.2em;
+    }
+    &.is--disable{
+    //   pointer-events: none;
+      background: var(--background_tint);
+      color: var(--color);
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+    &.is--primary{
+        background: var(--button);
+        color: var(--button_text_color);
+        transition: .3s ease;
+        
+    }
+    &.is--secondary{
+        background: var(--button_secondary);
+        border: .1em solid var(--button);
+        span{
+            @include special-color(var(--button, "fill", 0))
+        }
+    }
+
+    &.is--danger{
+        border: .02em solid $danger;
+        color: #fff;
+        background: rgba($color: $danger, $alpha: 1);
+    }
+    &.is--success{
+        border: .02em solid $success;
+        color: var(--text-color);
+        background: rgba($color: $success, $alpha: 0.1);
+    }
+    &.is--warning{
+        border: .02em solid $warning;
+        background: rgba($color: $warning, $alpha: 0.1);
+    } 
+}
+
+.kui-btn{
+    position: relative;
+    padding: .6em .8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .5em;
+    font-size: .98em;
+    border-radius: .8em;
+    span{
+        font-weight: 600;
+    }
+    &.is--neutral{
+        background: var(--background_tint);
+        border: .1em solid var(--color_rgba);
+    }
+    &.is--disable{
+    //   pointer-events: none;
+      background: var(--background_tint);
+      color: var(--color);
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+    &.is--primary{
+        background: var(--button);
+        color: var(--button_text_color);
+        transition: .3s ease;
+    }
+    &.is--secondary{
+        background: var(--button_secondary);
+        color: var(--button_secondary_text_color);
+        border: .1em solid var(--button);
+    }
+
+    &.is--danger{
+        border: .02em solid $danger;
+        color: var(--text-color);
+        background: rgba($color: $danger, $alpha: 0.1);
+    }
+    &.is--success{
+        border: .02em solid $success;
+        color: var(--text-color);
+        background: rgba($color: $success, $alpha: 0.1);
+    }
+    &.is--warning{
+        border: .02em solid $warning;
+        background: rgba($color: $warning, $alpha: 0.1);
+    }
+    &.is--icon-btn{
+        border-radius: 50%;
+        width: auto;
+        aspect-ratio: 1;
+        i{
+            &:last-child{
+                display: none;
+            }
+        }
+        &.is--respnsive{
+            padding: .6em;
+        }
+        &.is--large{
+            padding: 0;
+            width: 3.4em;
+            font-size: 1.3em;
+        }
+        position: relative;
+        span{
+            position: absolute;
+            bottom: -50%;
+            padding: .2em .5em;
+            font-size: .9em;
+            font-weight: 500;
+            background: var(--color);
+            color: var(--background);
+            border-radius: .3em;
+            display: none;
+            white-space: nowrap;
+        }
+        &:hover{
+            span{
+                display: block;
+            }
+        }
+    }
+    &.is--form-btn,
+    &.is--simple-btn{
+        &.is--large{
+            width: 100%;
+            min-height: 2.75em;
+        }
+    }
+}
+.kui-chip{
+    position: relative;
+    padding: .5em .6em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .5em;
+    font-size: .8em;
+    border-radius: 2em;
+    white-space: nowrap;
+    span{
+        white-space: nowrap;
+    }
+    &.is--neutral{
+        background: var(--background_tint);
+        border: .1em solid var(--color_rgba);
+    }
+
+    &.is--primary{
+        background: var(--button);
+        color: var(--button_text_color);
+    }
+    &.is--secondary{
+        background: var(--button_secondary);
+        color: var(--button_secondary_text_color);
+        border: .1em solid var(--button);
+    }
+
+    &.is--danger{
+        border: .02em solid $danger;
+        color: var(--text-color);
+        background: rgba($color: $danger, $alpha: 0.1);
+    }
+    &.is--success{
+        border: .02em solid $success;
+        color: var(--text-color);
+        background: rgba($color: $success, $alpha: 0.1);
+    }
+    &.is--warning{
+        border: .02em solid $warning;
+        background: rgba($color: $warning, $alpha: 0.1);
+    }
+}
+.kui-tag{
+    position: relative;
+    padding: .5em .6em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .5em;
+    font-size: .8em;
+    border-radius: .4em;
+    background: var(--background_tint);
+    &.is--primary{
+        background: var(--button);
+        color: var(--button_text_color);
+    }
+    &.is--secondary{
+        background: var(--button_secondary);
+        color: var(--button_secondary_text_color);
+    }
+
+    &.is--danger{
+        color: var(--text-color);
+        background: rgba($color: $danger, $alpha: 0.1);
+    }
+    &.is--success{
+        color: var(--text-color);
+        background: rgba($color: $success, $alpha: 0.1);
+    }
+    &.is--warning{
+        background: rgba($color: $warning, $alpha: 0.1);
+    }
+    &.is--info{
+        background: rgba($color: $info, $alpha: 0.1);
+    }
+}
+.kui-link{
+    position: relative;
+    padding: 0 0.25em;
+    font-size: .98em;
+    color: var(--color);
+    display: flex;
+    align-items: center;
+    column-gap: 0.2em;
+    i{
+        font-size: 1.2em;
+        color: currentColor;
+    }
+    &:hover{
+        span{
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    }
+    &.is--neutral{
+        color: var(--color_tint);
+        &:hover{
+        color: var(--color);
+        }
+    }
+    &.is--disable{
+        opacity: 0.7;
+    }
+    &.is--primary{
+        &:hover{
+        color: var(--button);
+        }
+    }
+    &.is--danger{
+        &:hover{
+        color: $danger;
+        }
+    }
+    &.is--success{
+        &:hover{
+        color: $success;
+        }
+    }
+
+    &.is--warning{
+        &:hover{
+        color: $warning;
+        }
+    }
+}
+
+.kui-page-setting-item{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: .8em;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    &__icon{
+        position: relative;
+        width: 2.5em;
+        height: 2.5em;
+        border-radius: .8em;
+        @extend %flex-center;
+        font-size: 1.6em;
+        
+    }
+}
+
+.kui-switch{
+    position: relative;
+    width: 5em;
+    height: 2.5em;
+    background: var(--background_tint);
+    border: .01em solid transparent;
+    border-radius: 2em;
+    transition: .3s ease;
+    &.is--disable{
+        opacity: .3;
+        pointer-events: none;
+    }
+    &.is--active{
+        background: var(--primary_rgba);
+        border: .02em solid var(--primary);
+    }
+    &__content{
+        position: absolute;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        background: var(--background);
+        top: 50%;
+        left: 0%;
+        transform: translate(10%, -50%);
+        transition: .3s ease;
+        &.is--active{
+            background: var(--primary);
+            transform: translate(130%, -50%);
+        }
+    }
+}

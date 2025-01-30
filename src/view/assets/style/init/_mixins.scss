@@ -1,0 +1,26 @@
+@mixin absolute-el ($top, $right, $bottom, $left, $x, $y){
+  position: absolute;
+  top: $top;
+  bottom: $bottom;
+  right: $right;
+  left: $left;
+  transform: translate($x,$y);
+}
+
+@mixin pseudo-el ($display: block, $pos: absolute, $content: '') {
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+@mixin special-color ($color: var(--color), $type: "fill", $stroke_size: 0em) {
+  @if $type == "fill" {
+    background: $color;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  } @else if $type == "stroke" {
+    background: none;
+    color: transparent;
+    -webkit-text-stroke: $stroke_size $color;
+  }
+}
